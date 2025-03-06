@@ -5,6 +5,8 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import Team from './Team'
 import NotFound from './NotFound'
+import CurrentLocation from './CurrentLocation'
+import Dashboard from './Dashboard'
 
 function App() {
  
@@ -23,9 +25,11 @@ function App() {
           <li><Link 
             className='text-white hover:text-yellow-300 font-medium transition duration-300'
            to="/contact">Contact</Link></li>
-        </ul>
         
+        </ul>
       </nav>
+      <CurrentLocation />
+
       <div className='container mx-auto py-8'>
       <Routes>
         <Route path='/' element={<Home/>}/>
@@ -33,6 +37,7 @@ function App() {
         <Route path='team' element={<Team/>}/>
         </Route>
         <Route path='/contact' element={<Contact/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='*' element={<NotFound/>}></Route>
 
       </Routes>
